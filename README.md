@@ -21,3 +21,9 @@ Note: See [requirements.txt](https://github.com/VanTye/stackabuse-graphql-api/bl
   * Input
   * Payload
 * Schema
+
+## Notes
+
+### Load Fixtures Data
+
+To load **fixtures/movies.json** into the database, run `python manage.py loaddata fixtures/movies.json`
