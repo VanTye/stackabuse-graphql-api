@@ -11,7 +11,7 @@ This repository is about a tutorial teaching how to build a GraphQL API with dja
 * pip install django
 * pip install graphene_django
 
-Note: See requirements.txt for more information.
+Note: See [requirements.txt](https://github.com/VanTye/stackabuse-graphql-api/blob/main/requirements.txt) for more information.
 
 ## Concepts
 
