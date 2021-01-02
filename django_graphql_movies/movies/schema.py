@@ -49,7 +49,7 @@ class Query(ObjectType):
 
 class ActorInput(graphene.InputObjectType):
     id = graphene.ID()
-    name - graphene.String()
+    name = graphene.String()
 
 
 class MovieInput(graphene.InputObjectType):
@@ -63,6 +63,9 @@ class CreateActor(graphene.Mutation):
 
     class Arguments:
         input = ActorInput(required=True)
+
+    class Meta:
+        description = 'Create an actor'
 
     ok = graphene.Boolean()
     actor = graphene.Field(ActorType)
@@ -101,6 +104,9 @@ class CreateMovie(graphene.Mutation):
 
     class Arguments:
         input = MovieInput(required=True)
+
+    class Meta:
+        description = 'Create a movie'
 
     ok = graphene.Boolean()
     movie = graphene.Field(MovieType)
@@ -155,6 +161,7 @@ class Mutation(graphene.ObjectType):
     create_actor = CreateActor.Field()
     update_actor = UpdateActor.Field()
     create_movie = CreateMovie.Field()
-    update_movie = UpdateMOvie.Field()
+    update_movie = UpdateMovie.Field()
 
-    
+
+schema = graphene.Schema(query=Query, mutation=Mutation)

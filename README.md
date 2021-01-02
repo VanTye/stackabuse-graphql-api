@@ -27,3 +27,11 @@ Note: See [requirements.txt](https://github.com/VanTye/stackabuse-graphql-api/bl
 ### Load Fixtures Data
 
 To load **fixtures/movies.json** into the database, run `python manage.py loaddata fixtures/movies.json`
+
+### GraphiQL
+
+To disable graphiql, edit this line `path('graphql/', GraphQLView.as_view(graphiql=False))` under **django_graphql_movies/urls.py**. To access GraphiQL, go to http://127.0.0.1:8000/graphql/.
+
+### CSRF protection
+
+Add csrf_exempt as such `path('graphql/', csrf_exempt(GraphQLView.as_view(graphiql=False)))` to add protection for communication from external applications.

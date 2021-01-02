@@ -40,7 +40,13 @@ INSTALLED_APPS = [
 
     # Created apps
     'movies',
+
+    'graphene_django',
 ]
+
+GRAPHENE = {
+    'SCHEMA': 'django_graphql_movies.schema.schema'
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
